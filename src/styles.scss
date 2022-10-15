@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import 'node_modules/bulma/bulma.sass';
+@import 'node_modules/angular-notifier/styles.scss';
+
+
+
+body{
+  background-color: rgb(239, 239, 239);
+  padding: 0;
+  margin: 0;
+}

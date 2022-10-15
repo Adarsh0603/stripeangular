@@ -1,0 +1,23 @@
+<div
+  class="is-flex is-justify-content-center is-align-items-center"
+  style="height: 100%"
+>
+  <div class="columns" style="width: 70vw" *ngIf="plans">
+    <ul class="price column" *ngFor="let plan of plans">
+      <li class="header">
+        {{ plan.planName }}
+      </li>
+      <li>
+        <b class="is-size-5">₹ {{ plan.price }} / year</b>
+      </li>
+      <li>{{ plan.space == -1 ? "Unlimited " : plan.space }}GB Storage</li>
+      <li>{{ plan.domains }} Doman Names</li>
+      <li>{{ plan.liveSupport ? "" : "No" }} Live Support</li>
+      <li>
+        <a href="#" class="button" [routerLink]="['/checkout', plan.id]"
+          >Choose</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

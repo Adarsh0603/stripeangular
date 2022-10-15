@@ -1,0 +1,48 @@
+<div #signupform class="auth">
+  <form>
+    <h3 class="is-size-3">{{ isSignup ? "Register" : "Login" }}</h3>
+    <div class="field">
+      <label for="username" class="label mt-4">Username</label>
+      <input
+        type="text"
+        class="input"
+        name="username"
+        id="username"
+        placeholder="Username"
+        [(ngModel)]="username"
+      />
+    </div>
+    <div class="field">
+      <label for="password" class="label mt-4">Password</label>
+      <input
+        type="password"
+        class="input"
+        name="password"
+        id="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+    </div>
+    <div class="is-flex is-justify-content-center mt-2">
+      <button
+        type="submit"
+        class="button is-primary is-fullwidth"
+        [ngClass]="{ 'is-loading': isLoading }"
+        (click)="isSignup ? signup() : login()"
+      >
+        {{ isSignup ? "Register" : "Login" }}
+      </button>
+    </div>
+    <div class="is-flex is-justify-content-center mt-2">
+      <span style="font-size: 16px">
+        {{ isSignup ? "Already a user? " : "Not existing user? " }}
+        <a
+          class="text-primary"
+          style="cursor: pointer; text-decoration: none"
+          (click)="isSignup = !isSignup"
+          >{{ isSignup ? "Login" : "Register" }}</a
+        >
+      </span>
+    </div>
+  </form>
+</div>
