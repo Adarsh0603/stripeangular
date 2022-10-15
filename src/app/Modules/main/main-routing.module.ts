@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FailureComponent } from '../checkout/failure/failure.component';
+import { SuccessComponent } from '../checkout/success/success.component';
 import { MainComponent } from './main.component';
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
             (m) => m.CheckoutModule
           ),
       },
+      { path: 'success', component: SuccessComponent },
+      { path: 'failure', component: FailureComponent },
     ],
   },
 ];

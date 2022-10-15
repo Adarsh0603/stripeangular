@@ -10,8 +10,12 @@
       <!-- Elements will create form elements here -->
     </div>
     <br />
-    <button class="button is-primary" (click)="submitPaymentDetails()">
-      Submit
+    <button
+      class="button is-primary is-fullwidth"
+      [ngClass]="{ 'is-loading': isLoading }"
+      (click)="submitPaymentDetails()"
+    >
+      Pay
     </button>
     <div id="error-message">
       <!-- Display error message to your customers here -->
