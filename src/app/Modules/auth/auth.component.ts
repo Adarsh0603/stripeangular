@@ -20,11 +20,12 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription.add(
-      this.utils.isLoading$.subscribe((l) =>
+      this.utils.isLoading$.subscribe((l) => {
+        console.log(l.key);
         l.key == Loading.AUTH
           ? (this.isLoading = l.state)
-          : (this.isLoading = false)
-      )
+          : (this.isLoading = false);
+      })
     );
   }
 

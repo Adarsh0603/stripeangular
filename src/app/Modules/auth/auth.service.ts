@@ -51,8 +51,11 @@ export class AuthService {
       })
       .subscribe({
         next: (res) => this.user$.next(this.currentUser),
-        error: (error) => this.user$.next(null),
-        complete: () => this.utils.setLoading(Loading.AUTO_LOGIN, false),
+        error: (error) => {
+          this.currentUser = null;
+          this.user$.next(this.currentUser);
+          this.utils.setLoading(Loading.AUTO_LOGIN, false);
+        },
       });
   }
 
